@@ -11,7 +11,7 @@ USER jenkins
 RUN python3 -m venv /home/jenkins/venv
 
 RUN /home/jenkins/venv/bin/pip install --upgrade pip && \
-    /home/jenkins/venv/bin/pip install flask psycopg2-binary
+    /home/jenkins/venv/bin/pip install pytest
 
 ENV PATH="/home/jenkins/venv/bin:${PATH}"
 
