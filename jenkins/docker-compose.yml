@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   jenkins-agent-python: 
     image: jenkins-agent-python:latest
@@ -15,7 +13,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
   jenkins-test-agent: 
-    image: jenkisn-test-agent:latest
+    image: jenkins-test-agent:latest
     container_name: jenkins-test-python
     restart: unless-stopped
     depends_on:
