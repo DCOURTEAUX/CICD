@@ -3,7 +3,7 @@ FROM jenkins/inbound-agent:latest
 USER root
 
 RUN apt-get update && \
-    apt-get install -y python3 python3-pip python3-venv libpq-dev && \
+    apt-get install -y python3 python3-pip python3-venv libpq-dev libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev && \ 
     apt-get clean
 
 USER jenkins
