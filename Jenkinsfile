@@ -28,7 +28,9 @@ pipeline {
                 unstash 'source-code'
                 script {
                     withSonarQubeEnv('SonarQube') {
-                        sh 'cd back && sonar-scanner'
+                        withSonarScanner('scanner'){
+                            sh 'cd back && sonar-scanner'
+                        }
                     }
                 }
             }
