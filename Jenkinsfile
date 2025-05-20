@@ -22,6 +22,18 @@ pipeline {
             }
         }
 
+        stage('SonarQube analysis') {
+            agent any
+            steps {
+                unstash 'source-code'
+                script {
+                    withSonarQubeEnv('SonarQube') {
+                        sh 'cd back && sonar-scanner'
+                    }
+                }
+            }
+        }
+
         stage('Test') {
             agent {
                 label 'agent-python-test'
